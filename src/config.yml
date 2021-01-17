@@ -1,0 +1,223 @@
+# % chance for each mob to drop an ancient tome
+# Book: true for whenever it also drops books (same chance)
+# Add / Remove enchantments as shown to give each mob that drop
+# Do not add other entities
+# TODO: add support for all vanilla entities
+Blaze:
+  Sharpness: 0.059
+  Fire Protection: 0.17
+  Fire Aspect: 0.5
+  Projectile Protection: 0.13
+Cave Spider:
+  Bane of Arthropods: 0.33
+  Feather Falling: 0.13
+  Efficiency: 0.2
+Creeper:
+  Sharpness: 0.059
+  Blast Protection: 0.5
+  Knockback: 0.17
+Drowned:
+  Smite: 0.1
+  Respiration: 0.33
+  Riptide: 0.1
+  Loyalty: 0.1
+  Projectile Protection: 0.13
+Elder Guardian:
+  Imapling: 50
+  Respiration: 33
+  Thorns: 50
+  Luck of the Sea: 50
+  Lure: 50
+  Depth Strider: 50
+Enderman:
+  Sharpness: 0.059
+  Feather Falling: 0.13
+  Looting: 0.13
+  Efficiency: 0.2
+  Protection: 0.11
+Ender Dragon:
+  Book: true
+  Power: 20
+  Punch: 20
+  Sharpness: 20
+  Bane of Arthropods: 20
+  Smite: 20
+  Depth Strider: 20
+  Efficiency: 20
+  Unbreaking: 20
+  Fire Aspect: 20
+  Frost Walker: 20
+  Impaling: 20
+  Knockback: 20
+  Fortune: 20
+  Looting: 20
+  Loyalty: 20
+  Luck of the Sea: 20
+  Lure: 20
+  Respiration: 20
+  Piercing: 20
+  Protection: 20
+  Blast Protection: 20
+  Feather Falling: 20
+  Fire Protection: 20
+  Projectile Protection: 20
+  Quick Charge: 20
+  Riptide: 20
+  Soul Speed: 20
+  Sweeping Edge: 20
+  Thorns: 20
+Endermite:
+  Bane of Arthropods: 0.33
+Evoker:
+  Sharpness: 5.9
+  Looting: 13
+  Protection: 11
+Ghast:
+  Sharpness: 0.059
+  Knockback: 0.17
+  Blast Protection: 0.5
+  Fire Protection: 0.17
+  Projectile Protection: 0.13
+  Fire Aspect: 0.5
+Guardian:
+  Imapling: 0.5
+  Respiration: 0.33
+  Thorns: 0.5
+  Luck of the Sea: 0.5
+  Lure: 0.5
+  Depth Strider: 0.5
+Hoglin:
+  Sharpness: 0.059
+  Knockback: 0.17
+  Protection: 0.11
+  Unbreaking: 0.2
+Iron Golem:
+  Sharpness: 0.059
+  Knockback: 0.17
+  Protection: 0.11
+  Unbreaking: 0.2
+Husk:
+  Smite: 0.1
+Magma Cube:
+  Sharpness: 0.059
+  Frost Walker: 0.5
+  Knockback: 0.17
+  Fire Protection: 0.17
+  Sweeping Edge: 0.33
+  Feather Falling: 0.13
+Phantom:
+  Smite: 0.1
+  Feather Falling: 0.13
+  Looting: 0.13
+  Efficiency: 0.2
+Piglin:
+  Sharpness: 0.059
+  Quick Charge: 0.5
+  Piercing: 0.5
+  Fortune: 0.25
+  Projectile Protection: 0.13
+Piglin Brute:
+  Sharpness: 5.9
+  Protection: 1.1
+  Fortune: 5
+  Efficiency: 2
+Pillager:
+  Sharpness: 0.059
+  Quick Charge: 0.5
+  Piercing: 0.5
+  Projectile Protection: 0.13
+Ravager:
+  Sharpness: 0.59
+  Knockback: 1.7
+  Protection: 1.1
+  Unbreaking: 2
+Shulker:
+  Sharpness: 0.059
+  Feather Falling: 0.13
+  Looting: 0.13
+  Projectile Protection: 0.13
+Skeleton:
+  Smite: 0.1
+  Power: 0.5
+  Punch: 0.5
+  Projectile Protection: 0.13
+Stray:
+  Smite: 0.1
+  Power: 0.5
+  Punch: 0.5
+  Projectile Protection: 0.13
+Slime:
+  Sharpness: 0.059
+  Frost Walker: 0.5
+  Knockback: 0.17
+  Sweeping Edge: 0.33
+  Feather Falling: 0.13
+Silverfish:
+  Bane of Arthropods: 0.33
+  Efficiency: 0.2
+Spider:
+  Bane of Arthropods: 0.33
+  Feather Falling: 0.13
+  Efficiency: 0.2
+Vex:
+  Sharpness: 0.59
+  Protection: 1.1
+  Feather Falling: 1.3
+Vindicator:
+  Sharpness: 0.059
+  Looting: 0.13
+  Protection: 0.11
+Witch:
+  Sharpness: 0.59
+  Looting: 1.3
+  Unbreaking: 2
+Wither:
+  Book: true
+  Power: 10
+  Punch: 10
+  Sharpness: 10
+  Bane of Arthropods: 10
+  Smite: 10
+  Depth Strider: 10
+  Efficiency: 10
+  Unbreaking: 10
+  Fire Aspect: 10
+  Frost Walker: 10
+  Impaling: 10
+  Knockback: 10
+  Fortune: 10
+  Looting: 10
+  Loyalty: 10
+  Luck of the Sea: 10
+  Lure: 10
+  Respiration: 10
+  Piercing: 10
+  Protection: 10
+  Blast Protection: 10
+  Feather Falling: 10
+  Fire Protection: 10
+  Projectile Protection: 10
+  Quick Charge: 10
+  Riptide: 10
+  Soul Speed: 10
+  Sweeping Edge: 10
+  Thorns: 10
+Wither Skeleton:
+  Smite: 0.1
+  Looting: 0.13
+  Soul Speed: 0.1
+  Fire Protection: 0.17
+Zombie:
+  Smite: 0.1
+Zombie Villager:
+  Smite: 0.1
+  Fortune: 0.25
+  Looting: 0.13
+Zombified Piglin:
+  Smite: 0.1
+  Looting: 0.2
+  Fire Protection: 0.17
+  Sweeping Edge: 0.33
+
+
+
