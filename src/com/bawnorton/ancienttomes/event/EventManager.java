@@ -73,7 +73,6 @@ public class EventManager implements Listener {
             noStack(book);
             event.getInventory().setResult(book);
         }
-        else event.getInventory().setResult(null);
     }
 
     @EventHandler

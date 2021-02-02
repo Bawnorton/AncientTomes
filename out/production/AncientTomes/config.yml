@@ -1,6 +1,35 @@
-# % chance for each mob to drop an ancient tome
-# Book: true for whenever it also drops books (same chance)
-# Add / Remove enchantments as shown to give each mob that drop
+#   Entity Supports (Exact):
+#     Bat, Bee, Blaze, Cat, Cave Spider, Chicken, Cod, Cow, Creeper, Donkey, Dolphin
+#     Drowned, Elder Guardian, Enderman, Ender Dragon, Endermite, Evoker, Fox, Giant
+#     Ghast, Guardian, Hoglin, Horse, Husk, Illusioner, Iron Golem, Llama, Magma Cube
+#     Mule, Mooshroom, Ocelot, Panda, Parrot, Phantom, Pig, Piglin, Piglin Brute
+#     Pillager, Polar Bear, Pufferfish, Rabbit, Ravager, Salmon, Sheep, Shulker, Silverfish
+#     Skeleton, Skeleton Horse, Slime, Snowman, Spider, Squid, Stray, Strider, Trader Llama
+#     Tropical Fish, Turtle, Vex, Villager, Vindicator, Wandering Trader, Witch, Wither
+#     Wither Skeleton, Zoglin, Zombie, Zombie Horse, Zombie Villager, Zombified Piglin
+#   Enchantment Supports (Exact):
+#     Power, Punch, Sharpness, Bane of Arthropods, Smite, Efficiency, Unbreaking
+#     Fire Aspect, Frost Walker, Impaling, Knockback, Fortune, Looting, Loyalty
+#     Luck of the Sea, Lure, Respiration, Piercing, Protection, Blast Protection
+#     Feather Falling, Fire Proection, Projectile Protection, Quick Charge, Riptide
+#     Soul Speed, Sweeping Edge, Thorns
+#
+#   Usage:
+#
+#   Standard Mob
+#   Entity Name (exact):
+#     Enchantment Name (exact): % Drop Chance
+#     Enchantment Name (exact): % Drop Chance
+#     ...
+#
+#   Book Dropping Mob
+#   Entity Name (exact):
+#     Book: true
+#     Enchantment Name (exact): % Drop Chance
+#     ...
+#
+#   Default Values:
+#
 Blaze:
   Sharpness: 0.059
   Fire Protection: 0.17
