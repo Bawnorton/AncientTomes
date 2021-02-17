@@ -143,7 +143,7 @@ public class EventManager implements Listener {
         String name = entityMatrix.get(type);
         boolean bookDrop = false;
         for(String key: dropRates.keySet()) {
-            if(key.contains(name)) {
+            if(key.equals(name)) {
                 String enchantName = key.substring(key.indexOf(".") + 1);
                 if(enchantName.equals("Book")) {
                     bookDrop = true;
