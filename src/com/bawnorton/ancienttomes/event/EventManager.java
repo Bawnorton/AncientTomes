@@ -142,17 +142,18 @@ public class EventManager implements Listener {
     private void addDrops(EntityDeathEvent event, EntityType type) {
         String name = entityMatrix.get(type);
         boolean bookDrop = false;
-        for(String key: dropRates.keySet()) {
+        for(String drop: dropRates.keySet()) {
+            String key = drop.substring(0, drop.indexOf("."));
             if(key.equals(name)) {
-                String enchantName = key.substring(key.indexOf(".") + 1);
+                String enchantName = drop.substring(drop.indexOf(".") + 1);
                 if(enchantName.equals("Book")) {
                     bookDrop = true;
                     continue;
                 }
                 double chance = Math.random();
                 double rate;
-                if(dropRates.get(key) instanceof Integer) rate = new Double((Integer) dropRates.get(key)) / 100;
-                else rate = (double) dropRates.get(key) / 100;
+                if(dropRates.get(drop) instanceof Integer) rate = new Double((Integer) dropRates.get(drop)) / 100;
+                else rate = (double) dropRates.get(drop) / 100;
                 if(bookDrop && chance <= rate) event.getDrops().add(getBook(enchantName));
                 chance = Math.random();
                 if(chance <= rate) event.getDrops().add(getPage(enchantName));
