@@ -10,7 +10,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
-import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.entity.SpawnerSpawnEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.PrepareAnvilEvent;
@@ -21,12 +20,13 @@ import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
-import org.bukkit.metadata.MetadataValue;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import static com.bawnorton.ancienttomes.AncientTomes.instance;
-import static com.bawnorton.ancienttomes.Matrix.entityMatrix;
+import static com.bawnorton.ancienttomes.Matrix.*;
 import static com.bawnorton.ancienttomes.config.Config.dropRates;
 
 public class EventManager implements Listener {
@@ -48,6 +48,7 @@ public class EventManager implements Listener {
         int paperCount = 0;
         int leatherCount = 0;
         Enchantment lockedEnchant = null;
+        List<String> storeItem = null;
         for (ItemStack ingredient : ingredients) {
             if (ingredient == null) continue;
             if (ingredient.getType() == Material.LEATHER) leatherCount++;
@@ -58,11 +59,15 @@ public class EventManager implements Listener {
                     paperCount++;
                     continue;
                 }
-                if(lockedEnchant != null && !ingredient.containsEnchantment(lockedEnchant)) {
-                    event.getInventory().setResult(null);
-                    return;
+                if(lockedEnchant != null) {
+                    assert storeItem != null;
+                    if (!storeItem.equals(ingredient.getItemMeta().getLore())) {
+                        event.getInventory().setResult(null);
+                        return;
+                    }
                 }
                 lockedEnchant = (Enchantment) meta.getEnchants().keySet().toArray()[0];
+                storeItem = ingredient.getItemMeta().getLore();
                 ancientPageCount++;
             }
         }
@@ -88,8 +93,11 @@ public class EventManager implements Listener {
         }
         try {
             if (components[1].getItemMeta().getDisplayName().contains("Ancient Tome")) {
-                Enchantment enchantment = (Enchantment) components[1].getItemMeta().getEnchants().keySet().toArray()[0];
-                Integer level = (Integer) components[1].getItemMeta().getEnchants().values().toArray()[0];
+                String enchantString = components[1].getItemMeta().getLore().get(0);
+                String enchantType = enchantString.substring(2, enchantString.indexOf(" "));
+                Object[] enchantmentInfo = enchantmentMatrix.get(enchantType);
+                Enchantment enchantment = (Enchantment) enchantmentInfo[0];
+                Integer level = (Integer) enchantmentInfo[1];
                 ItemStack item = components[0];
                 ItemMeta meta = item.getItemMeta();
                 assert meta != null;
@@ -99,8 +107,7 @@ public class EventManager implements Listener {
                 ItemStack newItem = new ItemStack(item.getType(), item.getAmount());
                 newItem.setItemMeta(meta);
                 event.setResult(newItem);
-                String itemString = item.toString();
-                cost = Integer.parseInt(itemString.substring(itemString.indexOf("repair-cost=") + 12, itemString.indexOf("}}")));
+                cost = calcCost(components[0], enchantment, level);
                 instance.getServer().getScheduler().runTask(instance, () -> event.getInventory().setRepairCost(cost));
             }
         } catch (NullPointerException ignore) {}
@@ -116,7 +123,7 @@ public class EventManager implements Listener {
                 if (rawSlot == 2) {
                     Player player = (Player) event.getWhoClicked();
                     if(player.getLevel() >= cost) {
-                        player.setLevel(player.getLevel() - cost);
+                        if(inv.getItem(2) == null) return;
                         event.setCurrentItem(inv.getItem(2));
                     }
                 }
@@ -138,6 +145,31 @@ public class EventManager implements Listener {
         }
     }
 
+
+    private int calcCost(ItemStack item, Enchantment tomeEnchantment, Integer tomeLevel) {
+        ItemMeta itemMeta = item.getItemMeta();
+        assert itemMeta != null;
+        String itemMetaString = itemMeta.toString();
+        int repairIndex = itemMetaString.indexOf("repair-cost");
+        int repairCost = 0;
+        if(!(repairIndex == -1)) {
+            String repairCuttoff = itemMetaString.substring(repairIndex + 12);
+            int repairIntLength = 0;
+            for(char num: repairCuttoff.toCharArray()) {
+                if(Character.isDigit(num)) repairIntLength++;
+                else break;
+            }
+            repairCost = Integer.parseInt(repairCuttoff.substring(0, repairIntLength));
+        }
+        Map<Enchantment, Integer> itemEnchantments = item.getItemMeta().getEnchants();
+        for(Enchantment enchant: itemEnchantments.keySet()) {
+            int level = itemEnchantments.get(enchant);
+            int multiplication = costMatrix.get(enchant);
+            repairCost += (level*multiplication);
+        }
+        repairCost += costMatrix.get(tomeEnchantment) * tomeLevel;
+        return repairCost;
+    }
 
     private void addDrops(EntityDeathEvent event, EntityType type) {
         String name = entityMatrix.get(type);

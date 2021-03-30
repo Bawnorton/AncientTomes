@@ -1,7 +1,6 @@
 package com.bawnorton.ancienttomes;
 
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 
 import java.util.Hashtable;
@@ -107,5 +106,41 @@ public class Matrix {
         put("Soul Speed", new Object[]{Enchantment.SOUL_SPEED, 4});
         put("Sweeping Edge", new Object[]{Enchantment.SWEEPING_EDGE, 4});
         put("Thorns", new Object[]{Enchantment.THORNS, 4});
+    }};
+    public static final Hashtable<Enchantment, Integer> costMatrix = new Hashtable<Enchantment, Integer>() {{
+        put(Enchantment.ARROW_DAMAGE, 1);
+        put(Enchantment.ARROW_KNOCKBACK, 2);
+        put(Enchantment.DAMAGE_ALL, 1);
+        put(Enchantment.DAMAGE_ARTHROPODS, 1);
+        put(Enchantment.DAMAGE_UNDEAD, 1);
+        put(Enchantment.DIG_SPEED, 1);
+        put(Enchantment.DURABILITY, 1);
+        put(Enchantment.FIRE_ASPECT, 2);
+        put(Enchantment.FROST_WALKER, 2);
+        put(Enchantment.IMPALING, 2);
+        put(Enchantment.KNOCKBACK, 1);
+        put(Enchantment.LOOT_BONUS_BLOCKS, 2);
+        put(Enchantment.LOOT_BONUS_MOBS, 2);
+        put(Enchantment.LOYALTY, 1);
+        put(Enchantment.LUCK, 2);
+        put(Enchantment.LURE, 2);
+        put(Enchantment.OXYGEN, 2);
+        put(Enchantment.PIERCING, 1);
+        put(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+        put(Enchantment.PROTECTION_EXPLOSIONS, 2);
+        put(Enchantment.PROTECTION_FALL, 1);
+        put(Enchantment.PROTECTION_FIRE, 1);
+        put(Enchantment.PROTECTION_PROJECTILE, 1);
+        put(Enchantment.QUICK_CHARGE, 1);
+        put(Enchantment.RIPTIDE, 2);
+        put(Enchantment.SOUL_SPEED, 4);
+        put(Enchantment.SWEEPING_EDGE, 2);
+        put(Enchantment.THORNS,4 );
+    }};
+    public final static Hashtable<Integer, String> romanMatrix = new Hashtable<Integer, String>() {{
+        put(3, "III");
+        put(4, "IV");
+        put(5, "V");
+        put(6, "VI");
     }};
 }
