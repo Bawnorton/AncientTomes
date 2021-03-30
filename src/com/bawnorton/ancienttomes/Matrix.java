@@ -83,7 +83,7 @@ public class Matrix {
         put("Sharpness", new Object[]{Enchantment.DAMAGE_ALL, 6});
         put("Bane of Arthropods", new Object[]{Enchantment.DAMAGE_ARTHROPODS, 6});
         put("Smite", new Object[]{Enchantment.DAMAGE_UNDEAD, 6});
-        put("Efficieny", new Object[]{Enchantment.DIG_SPEED, 6});
+        put("Efficiency", new Object[]{Enchantment.DIG_SPEED, 6});
         put("Unbreaking", new Object[]{Enchantment.DURABILITY, 4});
         put("Fire Aspect", new Object[]{Enchantment.FIRE_ASPECT, 3});
         put("Frost Walker", new Object[]{Enchantment.FROST_WALKER, 3});

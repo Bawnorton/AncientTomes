@@ -94,7 +94,7 @@ public class EventManager implements Listener {
         try {
             if (components[1].getItemMeta().getDisplayName().contains("Ancient Tome")) {
                 String enchantString = components[1].getItemMeta().getLore().get(0);
-                String enchantType = enchantString.substring(2, enchantString.indexOf(" "));
+                String enchantType = enchantString.substring(2, enchantString.lastIndexOf(" "));
                 Object[] enchantmentInfo = enchantmentMatrix.get(enchantType);
                 Enchantment enchantment = (Enchantment) enchantmentInfo[0];
                 Integer level = (Integer) enchantmentInfo[1];
@@ -108,6 +108,7 @@ public class EventManager implements Listener {
                 newItem.setItemMeta(meta);
                 event.setResult(newItem);
                 cost = calcCost(components[0], enchantment, level);
+                if(cost > 40) cost = 40;
                 instance.getServer().getScheduler().runTask(instance, () -> event.getInventory().setRepairCost(cost));
             }
         } catch (NullPointerException ignore) {}
