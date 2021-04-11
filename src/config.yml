@@ -64,35 +64,35 @@ Enderman:
   Protection: 0.11
 Ender Dragon:
   Book: true
-  Power: 20
-  Punch: 20
-  Sharpness: 20
-  Bane of Arthropods: 20
-  Smite: 20
-  Depth Strider: 20
-  Efficiency: 20
-  Unbreaking: 20
-  Fire Aspect: 20
-  Frost Walker: 20
-  Impaling: 20
-  Knockback: 20
-  Fortune: 20
-  Looting: 20
-  Loyalty: 20
-  Luck of the Sea: 20
-  Lure: 20
-  Respiration: 20
-  Piercing: 20
-  Protection: 20
-  Blast Protection: 20
-  Feather Falling: 20
-  Fire Protection: 20
-  Projectile Protection: 20
-  Quick Charge: 20
-  Riptide: 20
-  Soul Speed: 20
-  Sweeping Edge: 20
-  Thorns: 20
+  Power: 4
+  Punch: 4
+  Sharpness: 4
+  Bane of Arthropods: 4
+  Smite: 4
+  Depth Strider: 4
+  Efficiency: 4
+  Unbreaking: 4
+  Fire Aspect: 4
+  Frost Walker: 4
+  Impaling: 4
+  Knockback: 4
+  Fortune: 4
+  Looting: 4
+  Loyalty: 4
+  Luck of the Sea: 4
+  Lure: 4
+  Respiration: 4
+  Piercing: 4
+  Protection: 4
+  Blast Protection: 4
+  Feather Falling: 4
+  Fire Protection: 4
+  Projectile Protection: 4
+  Quick Charge: 4
+  Riptide: 4
+  Soul Speed: 4
+  Sweeping Edge: 4
+  Thorns: 4
 Endermite:
   Bane of Arthropods: 0.33
 Evoker:
@@ -200,35 +200,35 @@ Witch:
   Unbreaking: 2
 Wither:
   Book: true
-  Power: 10
-  Punch: 10
-  Sharpness: 10
-  Bane of Arthropods: 10
-  Smite: 10
-  Depth Strider: 10
-  Efficiency: 10
-  Unbreaking: 10
-  Fire Aspect: 10
-  Frost Walker: 10
-  Impaling: 10
-  Knockback: 10
-  Fortune: 10
-  Looting: 10
-  Loyalty: 10
-  Luck of the Sea: 10
-  Lure: 10
-  Respiration: 10
-  Piercing: 10
-  Protection: 10
-  Blast Protection: 10
-  Feather Falling: 10
-  Fire Protection: 10
-  Projectile Protection: 10
-  Quick Charge: 10
-  Riptide: 10
-  Soul Speed: 10
-  Sweeping Edge: 10
-  Thorns: 10
+  Power: 2
+  Punch: 2
+  Sharpness: 2
+  Bane of Arthropods: 2
+  Smite: 2
+  Depth Strider: 2
+  Efficiency: 2
+  Unbreaking: 2
+  Fire Aspect: 2
+  Frost Walker: 2
+  Impaling: 2
+  Knockback: 2
+  Fortune: 2
+  Looting: 2
+  Loyalty: 2
+  Luck of the Sea: 2
+  Lure: 2
+  Respiration: 2
+  Piercing: 2
+  Protection: 2
+  Blast Protection: 2
+  Feather Falling: 2
+  Fire Protection: 2
+  Projectile Protection: 2
+  Quick Charge: 2
+  Riptide: 2
+  Soul Speed: 2
+  Sweeping Edge: 2
+  Thorns: 2
 Wither Skeleton:
   Smite: 0.1
   Looting: 0.13
